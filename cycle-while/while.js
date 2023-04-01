@@ -17,4 +17,4 @@ while (initialWeight > targetWeight) {
 }
     console.log('Количество дней тренировок и диеты: ' + days);
 // Программа окончена
-
+:)
