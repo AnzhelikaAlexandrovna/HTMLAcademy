@@ -12,7 +12,7 @@ const getPrice = function (hourTime, isImportantProject) {
     return hourTime * fixPrice;
   }
   
-  // getPrice(300, true);
+  getPrice(300, true);
   
   /* Техническое задание
   Мяу! Напиши программу для расчёта стоимости проекта.

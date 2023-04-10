@@ -1,5 +1,5 @@
-let netSalary = 0;
 const calculateSalary = function (dirtySalary) {
+    let netSalary = 0;
     if (dirtySalary >= 100000) {
       netSalary = dirtySalary - (dirtySalary * 0.45);
     } else {
