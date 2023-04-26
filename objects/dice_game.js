@@ -62,18 +62,16 @@ const gameRuleset = {
       return;
     }
   
-    let message = 'Победил ';
+    /*let message = 'Победил';    
     
-    if (winners.length > 1) {
-      message = 'Победили ';
+    if (winners.length > 1) {       
+        message = message + 'и';     
     }
-  
-    for (let i = 0; i < winners.length; i++) {
-      if (i >= 1) {
-        message += ', ';
-      }
-      message += winners[i].name;
-    }
+    message += ' ';*/
+    
+    let message = `Победил${winners.length > 1 ? 'и' : ''} `;       
+    // Упрощенное написание условия выше (?-if, :-else),
+    // Вся строка оборачивается в `апостроф`, а не в 'кавычки' 
   
     message += ' с количеством очков: ' + winners[0].points;
   
