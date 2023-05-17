@@ -57,8 +57,7 @@ const cardsData = [
     picture.alt = product.text;
     listItem.appendChild(picture);
     
-    const price = makeElement('p', 'good__price', product.price);
-    price.textContent += '₽/кг';
+    const price = makeElement('p', 'good__price', product.price + '₽/кг');
     listItem.appendChild(price);
     
     let inStock = 'good--available';
