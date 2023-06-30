@@ -1,21 +1,21 @@
 const chat = document.querySelector('.chat-content');   // чат-контейнер
 
 const template = document.querySelector('#message-template').content;
-const newMessage = template.querySelector('.chat-message');  // шаблон сообщения
+const chatMessage = template.querySelector('.chat-message');  // шаблон сообщения
 
-const newChatForm = document.querySelector('.chat-form');   // форма отправки
-const newChatTitle = newChatForm.querySelector('.chat-form-input'); // ввод сообщения
+const chatForm = document.querySelector('.chat-form');   // форма отправки
+const chatTitle = chatForm.querySelector('.chat-form-input'); // ввод сообщения
 
-newChatForm.addEventListener('submit', function (evt) {
+chatForm.addEventListener('submit', function (evt) {
   evt.preventDefault();       // отменяем отправку формы по умолчанию
   
-  const newChatText = newChatTitle.value;             // выводим текст
-  const message = newMessage.cloneNode(true);         // клонируем шаблон
+  const chatText = chatTitle.value;             // выводим текст
+  const message = chatMessage.cloneNode(true);         // клонируем шаблон
   const messageDescription = message.querySelector('p'); // в шаблоне ищем р
-  messageDescription.textContent = newChatText;    // присваиваем значение выведенного текста
+  messageDescription.textContent = chatText;    // присваиваем значение выведенного текста
   
   chat.appendChild(message);          // добавляем сообщение в конец чата 
-  newChatTitle.value = '';          // очищаем поле 
+  chatTitle.value = '';          // очищаем поле 
   
   const buttonChat = message.querySelector('.chat-message-button'); // находим в шаблоне кнопку удаления сообщения
   

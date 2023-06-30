@@ -1,20 +1,20 @@
-const pictures = [
+const picturesSrc = [
     'gallery-tomato/tomato-red-large.jpg',
     'gallery-tomato/tomato-yellow-large.jpg',
     'gallery-tomato/tomato-strange-large.jpg'
   ];
   
-  const picturePrewiew = document.querySelectorAll('.gallery__picture-preview');
+  const picturesPreview = document.querySelectorAll('.gallery__picture-preview');
   const fullPicture = document.querySelector('.full-picture');
   
-  const clickPicture = function (preview, full) {
-    preview.addEventListener('click', function () {
-      fullPicture.src = full;
+  const clickPicture = function (preview, src) {
+    preview.addEventListener('click', function () { 
+      fullPicture.src = src;
     });
   };
   
-  for (let i = 0; i < picturePrewiew.length; i++) {
-    clickPicture(picturePrewiew[i], pictures[i]);
+  for (let i = 0; i < picturesPreview.length; i++) {
+    clickPicture(picturesPreview[i], picturesSrc[i]);
   };
   
   /* Техническое задание

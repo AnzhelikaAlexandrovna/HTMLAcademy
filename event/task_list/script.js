@@ -1,16 +1,16 @@
-const list = document.querySelector('.todo-list');
-const items = list.children;
-const emptyListMessage = document.querySelector('.empty-tasks');
-const newItemForm = document.querySelector('.add-form');
-const newItemTitle = newItemForm.querySelector('.add-form-input');
-const taskTemplate = document.querySelector('#task-template').content;
-const newItemTemplate = taskTemplate.querySelector('.todo-list-item');
+const listN = document.querySelector('.todo-list');    // N(Node) в переменной означает значение ОБЪЕКТА (Node)
+const items = listN.children;
+const emptyListMessageN = document.querySelector('.empty-tasks');
+const ItemFormN = document.querySelector('.add-form');
+const ItemTitleN = ItemFormN.querySelector('.add-form-input');
+const taskTemplateN = document.querySelector('#task-template').content;
+const ItemTemplateN = taskTemplateN.querySelector('.todo-list-item');
 
 const toggleEmptyListMessage = function () {
   if (items.length === 0) {
-    emptyListMessage.classList.remove('hidden');
+    emptyListMessageN.classList.remove('hidden');
   } else {
-    emptyListMessage.classList.add('hidden');
+    emptyListMessageN.classList.add('hidden');
     }
 };
 
@@ -26,16 +26,16 @@ for (let i = 0; i < items.length; i++) {
   addCheckHandler(items[i]);
 }
 
-newItemForm.addEventListener('submit', function (evt) {
+ItemFormN.addEventListener('submit', function (evt) {
   evt.preventDefault();
 
-  const taskText = newItemTitle.value;
-  const task = newItemTemplate.cloneNode(true);
-  const taskDescription = task.querySelector('span');
-  taskDescription.textContent = taskText;
-  addCheckHandler(task);
+  const taskText = ItemTitleN.value;
+  const taskNode = ItemTemplateN.cloneNode(true);
+  const taskDescriptionNode = taskNode.querySelector('span');
+  taskDescriptionNode.textContent = taskText;
+  addCheckHandler(taskNode);
 
-  list.appendChild(task);
+  listN.appendChild(taskNode);
   toggleEmptyListMessage();
-  newItemTitle.value = '';
+  ItemTitleN.value = '';
 });
