@@ -1,4 +1,4 @@
-const chat = document.querySelector('.chat-content');   // чат-контейнер
+const chatContent = document.querySelector('.chat-content');   // чат-контейнер
 
 const template = document.querySelector('#message-template').content;
 const chatMessage = template.querySelector('.chat-message');  // шаблон сообщения
@@ -14,7 +14,7 @@ chatForm.addEventListener('submit', function (evt) {
   const messageDescription = message.querySelector('p'); // в шаблоне ищем р
   messageDescription.textContent = chatText;    // присваиваем значение выведенного текста
   
-  chat.appendChild(message);          // добавляем сообщение в конец чата 
+  chatContent.appendChild(message);          // добавляем сообщение в конец чата 
   chatTitle.value = '';          // очищаем поле 
   
   const buttonChat = message.querySelector('.chat-message-button'); // находим в шаблоне кнопку удаления сообщения
