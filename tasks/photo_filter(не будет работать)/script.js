@@ -1,13 +1,13 @@
-var controls = document.querySelectorAll('.toggle-controls button');
-var photo = document.querySelector('.photo');
+const controls = document.querySelectorAll('.toggle-controls button');
+const photo = document.querySelector('.photo');
 
-for (var i = 0; i < controls.length; i++) {
+for (let i = 0; i < controls.length; i++) {
   controls[i].innerHTML = controls[i].dataset.filter;
   clickControl(controls[i]);
 }
 
 function toggleFilter(control) {
-  for (var j = 0; j < controls.length; j++) {
+  for (let j = 0; j < controls.length; j++) {
     controls[j].classList.remove('active');
     photo.classList.remove(controls[j].dataset.filter);
   }
@@ -25,5 +25,5 @@ function clickControl(control) {
   });
 }
 
-var defaultFilter = document.querySelector('button.oldie');
+const defaultFilter = document.querySelector('button.oldie');
 toggleFilter(defaultFilter);
