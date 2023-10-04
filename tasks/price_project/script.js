@@ -1,30 +1,30 @@
  // расчет стоимсоти проектов
  const getPrice = function (hourTime, isImportantProject) {
-    let fixPrice = 1500;  // Фиксированная ставка, руб/час
-    
-    if (isImportantProject) {
-      hourTime /= 2;
-      fixPrice *= 2.5;
-    }
-    if (hourTime > 150) {
-      fixPrice -= 250;
-    }
-    return hourTime * fixPrice; 
-  }
- 
- function getProfitableProject (hourTime, profit) {
-  // расчет расходов проекта
-  let expensesImportantProject = getPrice(hourTime, true) - profit; // расходы срочного проекта
-  let expensesProject = getPrice(hourTime, false);  // расходы обычного пректа
+  let fixPrice = 1500;  // Фиксированная ставка, руб/час
   
-  // сравнение проектов
-  let result;
-  if (expensesImportantProject > expensesProject) {
-    result = `Выгодней обычный проект. Потратишь на него ${expensesProject}`;
-  } else {
-    result = `Выгодней срочный проект. Потратишь на него ${expensesImportantProject}`;
-  } 
-  return result;
+  if (isImportantProject) {
+    hourTime /= 2;
+    fixPrice *= 2.5;
+  }
+  if (hourTime > 150) {
+    fixPrice -= 250;
+  }
+  return hourTime * fixPrice; 
+}
+
+function getProfitableProject (hourTime, profit) {
+// расчет расходов проекта
+const expensesImportantProject = getPrice(hourTime, true) - profit; // расходы срочного проекта
+const expensesProject = getPrice(hourTime, false);  // расходы обычного пректа
+
+// сравнение проектов
+let result;
+if (expensesImportantProject > expensesProject) {
+  result = `Выгодней обычный проект. Потратишь на него ${expensesProject}`;
+} else {
+  result = `Выгодней срочный проект. Потратишь на него ${expensesImportantProject}`;
+} 
+return result;
 }
 console.log(getProfitableProject(200, 50000));
 
