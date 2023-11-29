@@ -191,6 +191,53 @@ a {
   left: 140px;
 }
 
+.item-info {
+  margin: 8px 0 10px 20px;
+  flex-grow: 1;
+}
+
+.title-advantages {
+  margin: 10px 0 8px;
+
+  font-family: "Georgia", "Times", serif;
+  font-size: 15px;
+  line-height: 22px;
+  font-weight: 400;
+}
+
+.item-advantages {
+  margin: 0;
+  padding-left: 14px;
+  padding-bottom: 12px;
+
+  border-bottom: 1px solid #e2e2e2;
+
+  font-family: "Georgia", "Times", serif;
+  font-style: italic;
+
+  list-style: none;
+}
+
+.item-advantages li {
+  position: relative;
+  margin-bottom: 6px;
+}
+
+.item-advantages li::before {
+  position: absolute;
+  content: "";
+
+  width: 6px;
+  height: 6px;
+
+  top: 6px;
+  left: -14px;
+
+  background-color: #000000;
+  border-radius: 50%;
+}
+
+
 .item-buy {
   display: flex;
   flex-wrap: wrap;
